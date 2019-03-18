@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 2.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Maddie Sorensen.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -74,6 +74,18 @@ def run_test_problem2a():
 
 
 def problem2a(circle, rectangle, window):
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+
+    upperright=rectangle.get_upper_right_corner()
+    lowerleft=rectangle.get_lower_left_corner()
+    line=rg.Line(upperright, lowerleft)
+    line.arrow
+    line.attach_to(window)
+    circle.outline_color=rectangle.outline_color
+    window.render()
+    window.close_on_mouse_click
+
     """
     See   problem2a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -145,6 +157,9 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+    rect.attach_to(win)
+    for k in range (n):
+
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
