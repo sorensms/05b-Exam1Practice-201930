@@ -80,7 +80,6 @@ def problem2a(circle, rectangle, window):
     upperright=rectangle.get_upper_right_corner()
     lowerleft=rectangle.get_lower_left_corner()
     line=rg.Line(upperright, lowerleft)
-    line.arrow
     line.attach_to(window)
     circle.outline_color=rectangle.outline_color
     window.render()
@@ -115,7 +114,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -158,7 +157,17 @@ def run_test_problem2b():
 
 def problem2b(rect, n, delta, win):
     rect.attach_to(win)
+
+    rl=rect.get_lower_left_corner()
+    ru=rect.get_upper_right_corner()
     for k in range (n):
+        upper=rg.Point(ru.x+delta*k,ru.y-delta*k)
+        lower=rg.Point(rl.x-delta*k,rl.y+delta*k)
+        rectanlgle1=rg.Rectangle(upper,lower)
+        rectanlgle1.attach_to(win)
+    win.render()
+    win.close_on_mouse_click
+
 
     """
     See   problem2b_picture.pdf   in this project for pictures
@@ -189,7 +198,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
