@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and MAddie Sorensen.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -38,7 +38,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# Done: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -149,8 +149,15 @@ def run_test_problem1a():
     #   print('       actual:  ', actual)
     # -------------------------------------------------------------------------
 
-
+import math
 def problem1a(m, n):
+    sum=0
+    for k in range ((n)^2-(m)^2+1):
+        a=math.sin((k+(m)^2))
+        sum=sum+a
+    return sum
+
+
     """
     What comes in:  Integers m and n with abs(m) <= abs(n).
     What goes out:
@@ -198,9 +205,34 @@ def run_test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+    expected =5
+    actual = problem1a(3, 5)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
 
+    expected = 3
+    actual = problem1a(2, 4)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', actual)
+
+    expected = 8
+    actual = problem1a(3, 8)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', actual)
+
+    expected = 6
+    actual = problem1a(3, 6)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', actual)
 
 def problem1b(m, f):
+    count=0
+    for k in range (f*m-m+1):
+        a=is_prime(m+k)
+        if a==True:
+            count=count+1
+    return count
+
     """
     What comes in:  Positive integers m and f such that m >= 2.
     What goes out:
@@ -290,6 +322,7 @@ def run_test_problem1c():
 
 
 def problem1c(n):
+    
     """
     What comes in:  An integer n >= 2.
     What goes out:
