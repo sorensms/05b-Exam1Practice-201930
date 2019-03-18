@@ -174,9 +174,12 @@ def run_test_problem0a():
 
 
 def problem0a(n):
-    a=sum_of_digits(n)
-    b=is_prime(a)
-    return b
+    sum=sum_of_digits(n)
+    if sum%2==0:
+        val=False
+    else:
+        val=True
+    return val
     """
     What comes in:  An integer.
     What goes out:
@@ -192,7 +195,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -250,12 +253,9 @@ def run_test_problem0b():
 
 def problem0b(n):
     count=0
-
-    for k in range (n-1):
-        a = is_prime(k+1)
-        if a==True:
+    for k in range (2,n+1):
+        if is_prime(k):
             count=count+1
-
     return(count)
 
 
@@ -275,7 +275,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
@@ -320,6 +320,14 @@ def run_test_problem0c():
 
 
 def problem0c(circle, n, window):
+    circle.attach_to(window)
+    for k in range (n+1):
+        center1=rg.Point(circle.center.x+circle.radius*2*k,circle.center.y)
+        circle1=rg.Circle(center1, circle.radius)
+        circle1.attach_to(window)
+        window.render(0.5)
+
+
     """
     See   problem0c_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -343,7 +351,7 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
